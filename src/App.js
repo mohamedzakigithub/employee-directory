@@ -9,7 +9,6 @@ import EmployeeList from "./components/EmployeeList";
 export default class App extends Component {
   style = {
     padding: "30px",
-    maxWidth: "500px",
   };
   state = {
     search: "",

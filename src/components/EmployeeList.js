@@ -8,16 +8,12 @@ import PhoneIcon from "@material-ui/icons/Phone";
 
 const useStyles = makeStyles({
   root: {
-    minWidth: 360,
-  },
-  title: {
-    fontSize: 14,
+    minWidth: 300,
   },
 });
 
 export default function OutlinedCard(props) {
   const classes = useStyles();
-
   return props.match.map((employee) => {
     return (
       <div key={employee.id}>
@@ -29,9 +25,7 @@ export default function OutlinedCard(props) {
           }}
         >
           <CardContent>
-            <Typography className={classes.title} gutterBottom>
-              Emloyee ID: {employee.id}
-            </Typography>
+            <Typography gutterBottom>Emloyee ID: {employee.id}</Typography>
             <Typography variant="h5" component="h2">
               {employee.name}
             </Typography>
