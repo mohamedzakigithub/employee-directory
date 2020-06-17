@@ -7,9 +7,7 @@ export default function Sort(props) {
   return (
     <div>
       <FormControl>
-        <InputLabel shrink htmlFor="sort">
-          Sort by:
-        </InputLabel>
+        <InputLabel htmlFor="sort">Sort by:</InputLabel>
         <NativeSelect
           onChange={props.handleSort}
           inputProps={{

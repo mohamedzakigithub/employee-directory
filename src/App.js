@@ -1,14 +1,15 @@
 import React, { Component } from "react";
 import AppBar from "./components/AppBar";
-import Table from "./components/Table";
 import Search from "./components/Search";
 import API from "./components/utils/API";
 import { Container, Grid } from "@material-ui/core";
 import Sort from "./components/Sort";
+import EmployeeList from "./components/EmployeeList";
 
 export default class App extends Component {
   style = {
     padding: "30px",
+    maxWidth: "500px",
   };
   state = {
     search: "",
@@ -57,11 +58,20 @@ export default class App extends Component {
             direction="row"
             justify="space-between"
             alignItems="center"
+            style={this.style}
           >
-            <Search handleSearch={this.handleSearch} />
-            <Sort handleSort={this.handleSort} />
+            <Search handleSearch={this.handleSearch} style={this.style} />
+            <Sort handleSort={this.handleSort} style={this.style} />
           </Grid>
-          <Table match={this.state.match} />
+          <br />
+          <Grid
+            container
+            direction="column"
+            justify="center"
+            alignItems="center"
+          >
+            <EmployeeList match={this.state.match} />
+          </Grid>
         </Container>
       </div>
     );
