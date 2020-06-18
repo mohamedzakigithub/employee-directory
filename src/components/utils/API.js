@@ -1,7 +1,7 @@
-import axios from "axios";
+import data from "./contacts.json";
 
 export default {
-  search: function () {
-    return axios.get("https://jsonplaceholder.typicode.com/users");
+  getData: function () {
+    return data;
   },
 };

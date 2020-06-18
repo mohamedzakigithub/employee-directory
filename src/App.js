@@ -17,12 +17,9 @@ export default class App extends Component {
   };
 
   componentDidMount() {
-    API.search()
-      .then((res) => {
-        this.setState({ data: res.data });
-        this.setState({ match: res.data });
-      })
-      .catch((err) => console.log(err));
+    const data = API.getData();
+    this.setState({ data: data });
+    this.setState({ match: data });
   }
 
   handleSearch = (e) => {
