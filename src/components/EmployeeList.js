@@ -25,7 +25,7 @@ export default function OutlinedCard(props) {
           }}
         >
           <CardContent>
-            <Typography gutterBottom>Emloyee ID: {employee.id}</Typography>
+            <Typography gutterBottom>Employee ID: {employee.id}</Typography>
             <Typography variant="h5" component="h2">
               {employee.name}
             </Typography>

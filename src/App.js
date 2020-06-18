@@ -4,7 +4,9 @@ import Search from "./components/Search";
 import API from "./components/utils/API";
 import { Container, Grid } from "@material-ui/core";
 import Sort from "./components/Sort";
+import View from "./components/View";
 import EmployeeList from "./components/EmployeeList";
+import Table from "./components/Table";
 
 export default class App extends Component {
   style = {
@@ -12,6 +14,7 @@ export default class App extends Component {
   };
   state = {
     search: "",
+    view: "cards",
     data: [],
     match: [],
   };
@@ -21,6 +24,10 @@ export default class App extends Component {
     this.setState({ data: data });
     this.setState({ match: data });
   }
+
+  changeView = (v) => {
+    this.setState({ view: v });
+  };
 
   handleSearch = (e) => {
     this.setState({ search: e.target.value }, () => {
@@ -54,20 +61,24 @@ export default class App extends Component {
             direction="row"
             justify="space-between"
             alignItems="center"
-            style={this.style}
           >
-            <Search handleSearch={this.handleSearch} style={this.style} />
-            <Sort handleSort={this.handleSort} style={this.style} />
+            <Search handleSearch={this.handleSearch} />
+            <Sort handleSort={this.handleSort} />
+            <View changeView={this.changeView} />
           </Grid>
           <br />
-          <Grid
-            container
-            direction="column"
-            justify="center"
-            alignItems="center"
-          >
-            <EmployeeList match={this.state.match} />
-          </Grid>
+          {this.state.view === "cards" && (
+            <Grid
+              container
+              direction="row"
+              justify="space-evenly"
+              alignItems="center"
+            >
+              <EmployeeList match={this.state.match} />
+            </Grid>
+          )}
+
+          {this.state.view === "table" && <Table match={this.state.match} />}
         </Container>
       </div>
     );
