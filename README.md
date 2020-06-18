@@ -1,4 +1,4 @@
-# employee directory
+# employee directory 📞
 
 A React front end application to display employee data from a database. The app uses fake users data stored in a locally hosted JSON file extracted from https://jsonplaceholder.typicode.com/.
 
