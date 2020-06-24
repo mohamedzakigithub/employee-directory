@@ -15,8 +15,6 @@ https://mohamedzakigithub.github.io/employee-directory/
 
 ![](/demo.gif)
 
-## Deployed app URL
-
 ## Functionality
 
 - The app displays a list of employee,s contact information.
