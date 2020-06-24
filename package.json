@@ -2,7 +2,7 @@
   "name": "emplyee-directory",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://mohamedzakigithub.github.io/react-portfolio",
+  "homepage": "http://mohamedzakigithub.github.io/employee-directory",
   "dependencies": {
     "@material-ui/core": "^4.10.2",
     "@material-ui/icons": "^4.9.1",
